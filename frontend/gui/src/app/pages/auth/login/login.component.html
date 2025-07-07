@@ -1,0 +1,43 @@
+<div class="login-container" style="display: flex; justify-content: center; align-items: center; min-height: 100vh; background: linear-gradient(135deg, #e2e8f0, #f8fafc);">
+  <p-toast position="top-center"></p-toast>
+  <p-card [style]="{'max-width': '380px', 'margin': '2rem', 'border-radius': '10px', 'box-shadow': '0 6px 20px rgba(0,0,0,0.1)'}">
+    <ng-template #header>
+      <div class="header-container" style="text-align: center; padding: 2rem 0;">
+        <i class="pi pi-sign-in" style="font-size: 2.8rem; color: #10b981;"></i>
+      </div>
+    </ng-template>
+
+    <ng-template #title>
+      <div class="login-title" style="text-align: center; font-size: 1.9rem; font-weight: 600; color: #111827; margin-bottom: 1rem;">Iniciar Sesión</div>
+    </ng-template>
+
+    <div class="form-fields" style="display: flex; flex-direction: column; gap: 1.2rem; padding: 0 1rem;">
+      <div class="field">
+        <label for="username" class="label" style="display: block; margin-bottom: 0.4rem; font-weight: 500; color: #374151;">Usuario</label>
+        <input pInputText id="username" [(ngModel)]="username" placeholder="Ingresa tu usuario" style="width: 100%; border-radius: 6px; padding: 0.5rem;" />
+      </div>
+
+      <div class="field">
+        <label for="password" class="label" style="display: block; margin-bottom: 0.4rem; font-weight: 500; color: #374151;">Contraseña</label>
+        <input pInputText id="password" type="password" [(ngModel)]="password" placeholder="Ingresa tu contraseña" style="width: 100%; border-radius: 6px; padding: 0.5rem;" />
+      </div>
+    </div>
+
+    <ng-template #footer>
+      <div class="button-container" style="display: flex; flex-direction: column; gap: 0.8rem; padding: 1.5rem;">
+        <p-button
+          (click)="login()"
+          label="Iniciar Sesión"
+          styleClass="p-button-rounded p-button-success"
+          [style]="{'width': '100%', 'background-color': '#10b981', 'border': 'none', 'font-weight': '500'}"
+        ></p-button>
+        <p-button
+          label="Crear Cuenta"
+          styleClass="p-button-text p-button-secondary"
+          routerLink="/auth/register"
+          [style]="{'width': '100%', 'color': '#10b981', 'font-weight': '500'}"
+        ></p-button>
+      </div>
+    </ng-template>
+  </p-card>
+</div>
